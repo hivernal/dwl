@@ -9,6 +9,6 @@ else
 fi
 
 brightness=${brightness%%%}
-ICON=${HOME}/.config/dwl/scripts/icons/icons8-sun.svg
+icon="${HOME}/.config/dwl/scripts/icons/icons8-sun.svg"
 
-dunstify -t 2000 -i "${ICON}" -h string:x-canonical-private-synchronous:brightness "${brightness}%" -h int:value:${brightness}
+dunstify -t 2000 -i "${icon}" -h string:x-canonical-private-synchronous:brightness "${brightness}%" -h int:value:${brightness}
