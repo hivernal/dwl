@@ -22,13 +22,7 @@ bar:
                     empty && id != 0:
                       string: {text: "{id}", margin: 12, foreground: 5e5f67ff}
                     urgent: {string: {text: "=> {id} <="}}
-                    id == 0: {string: {text: "{layout} {title}", max: 65}}
-
-  center:
-    - clock:
-        content:
-          - string: {text: "", font: "JetBrainsMono Nerd Font:weight=bold:pixelsize=20", right-margin: 10}
-          - string: {text: "{time}"}
+                    id == 0: {string: {text: "{layout} {title}", max: 100}}
 
   right:
     - backlight:
@@ -79,8 +73,14 @@ bar:
           map:
             default:
               - string: {text: "󰣼", font: "JetBrainsMono Nerd Font:weight=bold:pixelsize=20", right-margin: 7}
-              - string: {text: "disconnected", right-margin: 10}
+              - string: {text: "disconnected"}
             conditions:
               state == "up":
                 - string: {text: "󰣺", font: "JetBrainsMono Nerd Font:weight=bold:pixelsize=20", right-margin: 7}
-                - string: {text: "{ssid}", right-margin: 10}
+                - string: {text: "{ssid}"}
+
+    - clock:
+        content:
+          - string: {text: "", font: "JetBrainsMono Nerd Font:weight=bold:pixelsize=20", right-margin: 10}
+          - string: {text: "{time}", right-margin: 10}
+
