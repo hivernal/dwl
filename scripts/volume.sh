@@ -1,5 +1,8 @@
 #!/bin/bash
 
+SCRIPT_DIR="$(cd -- "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+ICONS_DIR="${SCRIPT_DIR}/icons"
+
 if [[ "$1" == "up" ]] then
   pactl set-sink-volume @DEFAULT_SINK@ +5%
 elif [[ "$1" == "down" ]]; then
@@ -11,7 +14,6 @@ fi
 muted="$(pactl get-sink-mute @DEFAULT_SINK@ | cut -d " "  -f2)"
 volume="$(pactl get-sink-volume @DEFAULT_SINK@ | awk '(NR == 1) {print $5}')"
 volume=${volume%%%}
-dir="${HOME}/.config/dwl/scripts/icons"
 if [[ ${muted} == "yes" ]]; then
     icon=audio-volume-muted-panel.svg
 else
@@ -26,4 +28,4 @@ else
   fi
 fi
 
-dunstify -t 2000 -i "${dir}/${icon}" -h string:x-canonical-private-synchronous:audio "${volume}%" -h int:value:${volume}
+dunstify -t 2000 -i "${ICONS_DIR}/${icon}" -h string:x-canonical-private-synchronous:audio "${volume}%" -h int:value:${volume}
