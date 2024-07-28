@@ -1,0 +1,1 @@
+dwl > "${HOME}/.cache/dwlinfo"
