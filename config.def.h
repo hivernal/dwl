@@ -31,6 +31,7 @@ static const Rule rules[] = {
 	/* app_id             title       tags mask     isfloating   monitor */
 	/* examples: */
   { "firefox",                  NULL,   1,         0,           -1 },
+  { "chromium",                 NULL,   1,         0,           -1 },
 	{ "libreoffice-writer",       NULL,   1 << 1,    0,           -1 },
 	{ "libreoffice-startcenter",  NULL,   1 << 1,    0,           -1 },
 	{ "evince",                   NULL,   1 << 2,    0,           -1 },

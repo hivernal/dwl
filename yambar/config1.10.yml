@@ -67,14 +67,16 @@ bar:
           - string: {text: "", font: "JetBrainsMono Nerd Font:weight=bold:pixelsize=20", right-margin: 10}
           - string: {text: "{used:mb}Mi"}
     - network:
+        name: wlo1
         poll-interval: 5000
         content:
           map:
             default:
-              empty: {}
+                - string: {text: "󰤭", font: "JetBrainsMono Nerd Font:weight=bold:pixelsize=20", right-margin: 9}
+                - string: {text: "disconnected"}
             conditions:
-              name == "wlo1":
-                - string: {text: "󰤨", font: "JetBrainsMono Nerd Font:weight=bold:pixelsize=20", right-margin: 8}
+              state == "up":
+                - string: {text: "󰤨", font: "JetBrainsMono Nerd Font:weight=bold:pixelsize=20", right-margin: 9}
                 - string: {text: "{ssid}"}
 
     - clock:
