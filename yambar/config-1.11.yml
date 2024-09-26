@@ -52,8 +52,8 @@ bar:
         content:
           - ramp:
               tag: capacity
-              font: "JetBrainsMono Nerd Font:weight=bold:pixelsize=19"
-              right-margin: 17
+              font: "JetBrainsMono Nerd Font:weight=bold:pixelsize=22"
+              right-margin: 15
               items:
                 - string: {text: ""}
                 - string: {text: ""}
@@ -67,20 +67,17 @@ bar:
           - string: {text: "", font: "JetBrainsMono Nerd Font:weight=bold:pixelsize=20", right-margin: 10}
           - string: {text: "{used:mb}Mi"}
     - network:
-        name: wlo1
         poll-interval: 5000
         content:
           map:
             default:
-                - string: {text: "󰤭", font: "JetBrainsMono Nerd Font:weight=bold:pixelsize=20", right-margin: 9}
-                - string: {text: "disconnected"}
+              empty: {}
             conditions:
-              state == "up":
-                - string: {text: "󰤨", font: "JetBrainsMono Nerd Font:weight=bold:pixelsize=20", right-margin: 9}
+              name == "wlo1":
+                - string: {text: "󰤨", font: "JetBrainsMono Nerd Font:weight=bold:pixelsize=21", right-margin: 12}
                 - string: {text: "{ssid}"}
 
     - clock:
         content:
-          - string: {text: "", font: "JetBrainsMono Nerd Font:weight=bold:pixelsize=20", right-margin: 10}
+          - string: {text: "󰥔", font: "JetBrainsMono Nerd Font:weight=bold:pixelsize=21", right-margin: 10}
           - string: {text: "{time}", right-margin: 10}
-
